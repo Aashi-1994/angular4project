@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Users List</h2>
+  <table class="table" >
+    <thead>
+      <tr>
+      	<th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Salary</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of userList">
+        <td>{{d.id}}</td>
+        <td>{{d.employee_name}}</td>
+        <td>{{d.employee_age}}</td>
+        <td>{{d.employee_salary}}</td>
+        <td>
+        	<button class="btn btn-primary">
+        		<i class="fa fa-pencil" aria-hidden="true"></i>
+        	</button>
+        	<button class="btn btn-danger">
+        		<i class="fa fa-trash" aria-hidden="true"></i>
+        	</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

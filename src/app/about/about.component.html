@@ -1,0 +1,56 @@
+<h1> Hello {{name}}</h1>
+<ul>
+	<li>Age : {{age}}</li>
+	<li>Address: {{address.street}} {{address.city}} {{address.state}}</li>
+</ul>
+<button (click)="onClick()">Click Me</button>
+<form (submit)="addHobby(hobby.value)">
+	<div>
+		<label>Hobbies</label>
+		<input type="text" #hobby>
+	</div>
+</form>
+
+<form>
+	<div>
+		<label>Name</label>
+		<input type="text"  [(ngModel)]="name" name="name">
+	</div>
+	<div>
+		<label>Age</label>
+		<input type="text"  [(ngModel)]="age" name="age">
+	</div>
+	<div>
+		<label>street</label>
+		<input type="text"  [(ngModel)]="address.street" name="street">
+	</div>
+	<div>
+		<label>city</label>
+		<input type="text"  [(ngModel)]="address.city" name="city">
+	</div>
+	<div>
+		<label>state</label>
+		<input type="text"  [(ngModel)]="address.state" name="state">
+	</div>
+</form>
+
+<h2> My Hobbies</h2>
+<ul>
+	<li *ngFor="let hobby of hobbies; let i=index"> {{i+1}} : {{hobby}}
+		<button (click)="deleteHobby(hobby)">Delete</button>
+	</li>
+</ul>
+<table border="1">
+	<tr>
+	<th>Id</th>
+	<th>Name</th>
+	<th>Age</th>
+	<th>Salary</th>
+</tr>
+<tr *ngFor="let b of dataget">  
+<td>{{b.id}}</td>
+<td>{{b.employee_name}}</td>
+<td>{{b.employee_age}}</td>
+<td>{{b.employee_salary}}</td>
+</tr>
+</table>
